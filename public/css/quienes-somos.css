@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.contenedorMision, .contenedorVision {
+
+    width: 50vw;
+    height: 60vh;
+    background-color: darkgray;
+    padding: 0%;
+    margin: 0%;
+    
+}
+.contenedorVision{
+  
+    background-color: navy;
+    float: right;
+}
+
+
