@@ -1,3 +1,44 @@
+const express = require('express');
+const routes = require('./rutas');
+const path = require('path');
+ 
+const bodyParser = require('body-parser');
+
+const port = process.env.PORT || 3000;
+
+
+//Exportar 
+const db = require('./config/db');
+
+db.sync()
+        .then(()=> console.log('Conexion al servidor'))
+        .catch(error => error);
+//Importamos los modelos
+
+
+
+
+Habilitar bodyParser
+
+app.use(bodyParser.urlencoded({extended:true}));
+
+
+
+
+
+app.set('view engine', 'pug');
+
+app.set('views', path.join(__dirname, './views'));
+app.use(express.static('public'));
+app.use(express.static('files'));
+app.use('/public', express.static('public'));
+app.use('/', routes());
+app.listen(port, ()=>{
+  
+        console.log('conexion') 
+
+});
+
 extends navegacion
 block contenido
 
@@ -20,14 +61,14 @@ block contenido
                 <div class="carousel-item">
                     
                     <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
+                    <h5>Práctica de mis ramas</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
         </div>
             <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
+                    <h5>Nuevo Cambio</h5>
                     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                 </div>
             </div>
@@ -41,6 +82,3 @@ block contenido
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-
-block footer
